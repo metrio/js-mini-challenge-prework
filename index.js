@@ -1,11 +1,14 @@
 // ***** Question 1 *****
 
 // *** Uncomment the lines below to test
-// console.log("%cQuestion 1", "color: red") 
+let counter = 1
+counter += 1
 
-// console.log(counter) 
-// // => 2
-// console.log("%c----------", "color: red") 
+console.log("%cQuestion 1", "color: red") 
+
+console.log(counter) 
+
+console.log("%c----------", "color: red") 
 
 
 // ***** Question 2 *****
@@ -13,83 +16,114 @@
 // *** Uncomment the lines below to test
 // *** after testing, comment the line causing the error back in 
 // *** otherwise, the error will stop the rest of your code from running
-// console.log("%cQuestion 2", "color: red") 
 
-// console.log(name)
-// // => "Ian"
+console.log("%cQuestion 2", "color: red") 
+const name = "Demetrio"
+console.log(name)
+// => "Ian"
 // name = "Not Ian" 
-// // => TypeError
-// console.log("%c----------", "color: red") 
+// => TypeError
+console.log("%c----------", "color: red") 
 
 
 
 // ***** Question 3 *****
 
 // *** Uncomment the lines below to test
-// console.log("%cQuestion 3", "color: red") 
+console.log("%cQuestion 3", "color: red") 
 
-// console.log(drinkWater(12))
-// // => "Man I sure am thirsty"
-// // => "Ahh that hits the spot"
-// // => 11
-// console.log("%c----------", "color: red") 
+console.log(drinkWater(12))
+
+function drinkWater(current_thirst_level){
+  console.log("Man I sure am thirsty")
+  current_thirst_level -= 1
+  console.log("Ahh that hits the spot")
+  console.log(current_thirst_level)
+}
+// => "Man I sure am thirsty"
+// => "Ahh that hits the spot"
+// => 11
+console.log("%c----------", "color: red") 
 
 
 
 // ***** Question 4 *****
 
 // *** Uncomment the lines below to test
-// console.log("%cQuestion 4", "color: red") 
+console.log("%cQuestion 4", "color: red") 
 
-// console.log(sameSameButDifferent(5, 5)) 
-// // => "same same"
-//
-// console.log(sameSameButDifferent(123, "123")) 
-// // => "same same (but different)"
-//
-// console.log(sameSameButDifferent(5, 7)) 
-// // => "different"
-//
-// console.log(sameSameButDifferent(123, "122")) 
-// // => "different"
-// console.log("%c----------", "color: red") 
+console.log(sameSameButDifferent(5, 5))
+
+function sameSameButDifferent(num, maybeNum){
+  if(num == maybeNum) {
+  console.log("same same")
+  } if ( num === maybeNum){
+    console.log("same same (but different)")
+  } else {
+    console.log("different")
+  } }
+  
+// => "same same"
+
+console.log(sameSameButDifferent(123, "123")) 
+// => "same same (but different)"
+
+console.log(sameSameButDifferent(5, 7)) 
+// => "different"
+
+console.log(sameSameButDifferent(123, "122")) 
+// => "different"
+console.log("%c----------", "color: red") 
 
 
 
 // ***** Question 5 *****
 
 // *** Uncomment the lines below to test
-// console.log("%cQuestion 5", "color: red")
+console.log("%cQuestion 5", "color: red")
 
-// const student1 = { name: "Duane", grade: 88 }
-// updateGrade(student1, 92)
-// console.log(student1)  
-// // => { name: "Duane", grade: 92 }
-// console.log("%c----------", "color: red") 
+const student1 = { name: "Duane", grade: 88 }
+updateGrade(student1, 92)
+
+function updateGrade(student, grade){
+  student.grade = 92
+}
+console.log(student1)  
+// => { name: "Duane", grade: 92 }
+console.log("%c----------", "color: red") 
 
 
 
 // ***** Question 6 *****
 
 // *** Uncomment the lines below to test
-// console.log("%cQuestion 6", "color: red")
+console.log("%cQuestion 6", "color: red")
 
-// const users = [ 
-//   { 
-//     name: "Duane", phones: { cell: "555-123-4567", office: "555-456-7890" }
-//   },
-//   { 
-//     name: "Liza", phones: { cell: "555-234-5678", office: "555-567-1234" }
-//   }
-// ]
-// printNameAndPhones(users)
-// // => "Duane"
-// // => "Cell: 555-123-4567"
-// // => "Office: 555-456-7890"
-// // => "Liza"
-// // => "Cell: 555-234-5678"
-// // => "Office: 555-567-1234"
-// console.log("%c----------", "color: red") 
+const users = [ 
+  { 
+    name: "Duane", phones: { cell: "555-123-4567", office: "555-456-7890" }
+  },
+  { 
+    name: "Liza", phones: { cell: "555-234-5678", office: "555-567-1234" }
+  }
+]
+printNameAndPhones(users)
+
+function printNameAndPhones(array){
+  for (let i = 0; i < array.length; i = i + 1){
+  console.log(`${array[i].name}`);
+  console.log(`Cell: ${array[i].phones.cell}`);
+  console.log(`Office: ${array[i].phones.cell}`);
+  }
+}
+
+// => "Duane"
+// => "Cell: 555-123-4567"
+// => "Office: 555-456-7890"
+// => "Liza"
+// => "Cell: 555-234-5678"
+// => "Office: 555-567-1234"
+console.log("%c----------", "color: red") 
 
 
 // ***** Callbacks *****
@@ -107,14 +141,24 @@ function myMap(array, callback) {
 // ***** Callbacks - Question 1 *****
 
 // *** Uncomment the lines below to test
-// console.log("%cCallbacks - Question 1", "color: red")
+console.log("%cCallbacks - Question 1", "color: red")
 
-// console.log(myMap([1,2,3,4,5], triple)) 
-// // => [3,6,9,12,15]
-//
-// console.log(myMap([2,4,6,8], triple))   
-// // => [6,12,18,24]
-// console.log("%c----------", "color: red") 
+console.log(myMap([1,2,3,4,5], triple)) 
+
+function triple(array){
+  tripled = []
+  for (let i = 0; i < array.length; i += 1){
+    x = array[i]
+    x = x * 3
+    tripled.push(x)
+  }
+  console.log(tripled)
+}
+// => [3,6,9,12,15]
+
+console.log(myMap([2,4,6,8], triple))   
+// => [6,12,18,24]
+console.log("%c----------", "color: red") 
 
 
 // ***** Callbacks - Question 2 *****

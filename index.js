@@ -238,7 +238,7 @@ function ticketNumberGeneratorFunc(){
   function takeATicketNumber(line) {
     count ++;
     line.push(count)
-    return `Welcome. You are ticket number${count}`
+    return `Welcome. You are ticket number ${count}`
   }
   return takeATicketNumber
 }

@@ -34,11 +34,11 @@ console.log("%cQuestion 3", "color: red")
 
 console.log(drinkWater(12))
 
-function drinkWater(current_thirst_level){
+function drinkWater(currentThirstLevel){
   console.log("Man I sure am thirsty")
-  current_thirst_level -= 1
+  currentThirstLevel -= 1
   console.log("Ahh that hits the spot")
-  console.log(current_thirst_level)
+  return (currentThirstLevel)
 }
 // => "Man I sure am thirsty"
 // => "Ahh that hits the spot"
@@ -52,17 +52,20 @@ console.log("%c----------", "color: red")
 // *** Uncomment the lines below to test
 console.log("%cQuestion 4", "color: red") 
 
-console.log(sameSameButDifferent(5, 5))
 
-function sameSameButDifferent(num, maybeNum){
-  if(num == maybeNum) {
-  console.log("same same")
-  } if ( num === maybeNum){
-    console.log("same same (but different)")
+
+function sameSameButDifferent(num, maybeNum) {
+  if(num === maybeNum) {
+  return "same same"
+  } else if ( num === parseInt(maybeNum)) {
+    return "same same (but different)"
   } else {
-    console.log("different")
-  } }
-  
+    return "different"
+  } 
+}
+
+
+ console.log(sameSameButDifferent(5, 5)) 
 // => "same same"
 
 console.log(sameSameButDifferent(123, "123")) 
@@ -86,7 +89,7 @@ const student1 = { name: "Duane", grade: 88 }
 updateGrade(student1, 92)
 
 function updateGrade(student, grade){
-  student.grade = 92
+  student.grade = grade
 }
 console.log(student1)  
 // => { name: "Duane", grade: 92 }
@@ -109,11 +112,11 @@ const users = [
 ]
 printNameAndPhones(users)
 
-function printNameAndPhones(array){
-  for (let i = 0; i < array.length; i = i + 1){
+function printNameAndPhones(array) {
+  for (let i = 0; i < array.length; i = i + 1) {
   console.log(`${array[i].name}`);
   console.log(`Cell: ${array[i].phones.cell}`);
-  console.log(`Office: ${array[i].phones.cell}`);
+  console.log(`Office: ${array[i].phones.office}`);
   }
 }
 
@@ -145,8 +148,8 @@ console.log("%cCallbacks - Question 1", "color: red")
 
 console.log(myMap([1,2,3,4,5], triple)) 
 
-function triple(number){
-  console.log(number * 3)
+function triple(number) {
+ return number * 3
 }
 
 // => [3,6,9,12,15]
@@ -163,8 +166,8 @@ console.log("%cCallbacks - Question 2", "color: red")
 
 console.log(myMap(["Ian", "Chase"], greet))
 
-function greet(name){
-  console.log(`Hi, ${name}!`)
+function greet(name) {
+  return `Hi, ${name}!`
 }
 // => ["Hi, Ian!", "Hi, Chase!"]
 console.log("%c----------", "color: red") 
@@ -196,14 +199,14 @@ console.log("%cScope & Closures - Question 1", "color: red")
 
 counter = 0
 
-function takeATicketNumber(){
+function takeATicketNumber() {
   counter += 1
-  console.log(`Welcome. You are ticket number ${counter}`)
+  return `Welcome. You are ticket number ${counter}`
   line.push(counter)
 }
 
 function nowServing(){
-  console.log(`Currently serving ${line.shift(0)}`)
+  return `Currently serving ${line.shift(0)}`
   
 }
 
@@ -233,7 +236,7 @@ console.log("%cScope & Closures - Question 2", "color: red")
 
 const newLine = []
 
-function ticketNumberGeneratorFunc(){
+function ticketNumberGeneratorFunc() {
   let count = 0
   function takeATicketNumber(line) {
     count ++;
@@ -257,3 +260,6 @@ console.log(nowServing(newLine))
 console.log(nowServing(newLine))
 // => `Currently serving 2.`
 console.log("%c----------", "color: red") 
+
+// Overall I have to work on indentation and knowing when to use return vs console.log()
+// Also have to look at different enumerators soon to make sure I'm able to work on them
